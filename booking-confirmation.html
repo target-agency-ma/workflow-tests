@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Booking Confirmed</title>
+</head>
+<body>
+    <h1>Booking Confirmed!</h1>
+    <p>Thank you for your booking. Here are your details:</p>
+    <p>Name: <span id="userName"></span></p>
+    <p>Date: <span id="bookingDate"></span></p>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', (event) => {
+            const urlParams = new URLSearchParams(window.location.search);
+
+            const userName = urlParams.get('name');
+            const bookingDate = urlParams.get('date');
+
+            if (userName) {
+                document.getElementById('userName').textContent = userName;
+            }
+            if (bookingDate) {
+                document.getElementById('bookingDate').textContent = bookingDate;
+            }
+        });
+    </script>
+</body>
+</html>
